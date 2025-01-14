@@ -48,3 +48,12 @@ export default tseslint.config({
   },
 })
 ```
+we can select the option and get a form a name with label select item in select checkbox.In the input below label we can give our form  custom name.
+we can create other input field like name fullname etc as many as  we like .
+we also can have password field
+in radio option we can add option and a question for a radio button in widget name.
+we also can add email field and phone 
+and finally add submit 
+to submit form
+we also can reset form using reset button below form
+clicking preview will render form page only
