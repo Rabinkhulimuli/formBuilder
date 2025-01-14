@@ -120,7 +120,7 @@ function App() {
             fieldErrors[err.path[0] as string] = err.message;
           }
         });
-        setErrors(fieldErrors); 
+        setErrors(fieldErrors);
       }
     }
   };
@@ -129,34 +129,38 @@ function App() {
     switch (widget.type) {
       case "text":
         return (
-          <label key={widget.id} className="block my-2">
+          <label key={widget.id} className="block my-2 ">
             {widget.name}:{" "}
-            <input
-              type="text"
-              name={widget.name}
-              className="border px-2 py-1"
-              onChange={(e) => handleInputChange(widget.name, e.target.value)}
-            />
-            {errors[widget.name] && (
-              <p className="text-red-500 text-sm capitalize   text-center">
-                !!{errors[widget.name]}!!
-              </p>
-            )}
+            <div className="mx-8 flex flex-col max-w-[200px] ">
+              <input
+                type="text"
+                name={widget.name}
+                className="border px-2 py-1"
+                onChange={(e) => handleInputChange(widget.name, e.target.value)}
+              />
+              {errors[widget.name] && (
+                <p className="text-red-500 text-sm capitalize   ">
+                  !!{errors[widget.name]}!!
+                </p>
+              )}
+            </div>
           </label>
         );
       case "password":
         return (
-          <label key={widget.id} className="block my-2">
+          <label key={widget.id} className="block my-2 ">
             {widget.name}:{" "}
-            <input
-              type="password"
-              name={widget.name}
-              className="border px-2 py-1"
-              onChange={(e) => handleInputChange(widget.name, e.target.value)}
-            />
-            {errors[widget.name] && (
-              <p className="text-red-500 text-sm">{errors[widget.name]}</p>
-            )}
+            <div className="mx-8 flex flex-col max-w-[200px] ">
+              <input
+                type="password"
+                name={widget.name}
+                className="border px-2 py-1"
+                onChange={(e) => handleInputChange(widget.name, e.target.value)}
+              />
+              {errors[widget.name] && (
+                <p className="text-red-500 text-sm">{errors[widget.name]}</p>
+              )}
+            </div>
           </label>
         );
       case "radio":
@@ -230,9 +234,9 @@ function App() {
       </>
     );
   }
-/* const validationSchema = createValidationSchema(widgets);
+  /* const validationSchema = createValidationSchema(widgets);
 const jsonSchema = zodToJsonSchema(validationSchema); */
-  
+
   return (
     <div className="flex gap-4 p-4">
       <div className="space-y-4">
